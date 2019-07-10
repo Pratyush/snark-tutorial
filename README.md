@@ -6,7 +6,7 @@ curl https://sh.rustup.rs -sSf | sh
 rustup install nightly
 ```
 
-After that, use `cargo`, the standard Rust build tool, to build the library:
+After that, use `cargo`, the standard Rust build tool, to build and run the examples:
 
 ```
 git clone https://github.com/Pratyush/snark-tutorial.git
