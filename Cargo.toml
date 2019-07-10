@@ -1,0 +1,10 @@
+[package]
+name = "snark-tutorial"
+version = "0.1.0"
+authors = ["Pratyush Mishra <pratyushmishra@berkeley.edu>"]
+edition = "2018"
+
+[dependencies]
+algebra = { git = "https://github.com/scipr-lab/zexe" }
+snark = { git = "https://github.com/scipr-lab/zexe" }
+rand = { version = "0.4" }
