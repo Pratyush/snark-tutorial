@@ -8,3 +8,11 @@ edition = "2018"
 algebra = { git = "https://github.com/scipr-lab/zexe" }
 snark = { git = "https://github.com/scipr-lab/zexe" }
 rand = { version = "0.4" }
+
+[[bin]]
+name = "lc"
+path = "src/lc.rs"
+
+[[bin]]
+name = "simple"
+path = "src/simple.rs"
