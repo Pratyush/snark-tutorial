@@ -27,7 +27,6 @@ use crypto_primitives::{
     crh::{
         pedersen::{PedersenCRH, PedersenWindow, constraints::{PedersenCRHGadget, PedersenCRHGadgetParameters}},
         FixedLengthCRH,
-        FixedLengthCRHGadget,
     },
     merkle_tree::*,
     merkle_tree::constraints::*,
@@ -125,9 +124,9 @@ impl ConstraintSynthesizer<Fr> for PathCheckCircuit {
 
         // Allocate Parameters for CRH
         let crh_parameters = PedersenCRHGadgetParameters::alloc(
-                &mut cs.ns(|| "Parameters"),
-                || Ok(params),
-            )?;
+            &mut cs.ns(|| "Parameters"),
+            || Ok(params),
+        )?;
 
 
         // Allocate Merkle Tree Path
@@ -184,7 +183,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     println!("\nCreating zkSNARK proof of membership");
     let proof = {
         // Create an instance of our circuit (with the witness)
-        let c = PathCheckCircuit::for_proving(crh_parameters.clone(), leaf, root, path);
+        let c = PathCheckCircuit::for_proving(crh_parameters.clone(), leaf, root, Default::default());
         // Create a proof with our parameters.
         create_random_proof(c, &pp, rng)?
     };
