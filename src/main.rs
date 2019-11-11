@@ -25,7 +25,10 @@ use r1cs_std::prelude::*;
 use r1cs_std::groups::curves::twisted_edwards::jubjub::JubJubGadget;
 use crypto_primitives::{
     crh::{
-        pedersen::{PedersenCRH, PedersenWindow, constraints::{PedersenCRHGadget, PedersenCRHGadgetParameters}},
+        pedersen::{
+            PedersenCRH, PedersenWindow, 
+            constraints::{PedersenCRHGadget, PedersenCRHGadgetParameters}
+        },
         FixedLengthCRH,
     },
     merkle_tree::*,
