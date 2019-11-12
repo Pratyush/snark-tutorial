@@ -186,7 +186,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     println!("\nCreating zkSNARK proof of membership");
     let proof = {
         // Create an instance of our circuit (with the witness)
-        let c = PathCheckCircuit::for_proving(crh_parameters.clone(), leaf, root, Default::default());
+        let c = PathCheckCircuit::for_proving(crh_parameters.clone(), leaf, root, path);
         // Create a proof with our parameters.
         create_random_proof(c, &pp, rng)?
     };
